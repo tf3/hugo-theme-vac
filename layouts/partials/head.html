@@ -1,5 +1,4 @@
 <head>
-    <!-- TODO: show only .Site.Title if on main page -->
     <title>{{ .Title }} - {{ .Site.Title }}</title>
     {{ $normalize := resources.Get "style/normalize.css" }}
     {{ $main := resources.Get "style/main.css"  }}
@@ -7,4 +6,7 @@
     <link rel="stylesheet" href="{{ $bundle.Permalink }}" integrity="{{ $bundle.Data.Integrity }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
 </head>
