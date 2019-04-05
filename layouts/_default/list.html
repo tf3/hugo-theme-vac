@@ -2,6 +2,7 @@
 <main class="list">
     <h1>{{ .Title }}</h1>
     {{- range .Data.Pages.GroupByDate "2006" }}
+    {{ if ne .Key "0001" }}
     <div class="posts-group">
         <div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
         <ul class="posts-list">
@@ -15,6 +16,7 @@
             {{- end }}
         </ul>
     </div>
+    {{- end  }}
     {{- end }}
 </main>
 {{ end }}
