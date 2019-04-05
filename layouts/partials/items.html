@@ -1,0 +1,20 @@
+{{ define "main" }}
+<main class="list">
+    <h1>{{ .Title }}</h1>
+    {{- range .Data.Pages.GroupByDate "2006" }}
+    <div class="posts-group">
+        <div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
+        <ul class="posts-list">
+            {{- range .Pages }}
+            <li class="post-item">
+                <a href="{{.Permalink}}">
+                    <span class="post-title">{{.Title | markdownify}}</span>
+                </a>
+                <!-- TODO: include tags here -->
+            </li>
+            {{- end }}
+        </ul>
+    </div>
+    {{- end }}
+</main>
+{{ end }}

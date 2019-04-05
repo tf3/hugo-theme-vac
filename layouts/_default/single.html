@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main class="post">
+    <h1>{{ .Title | markdownify }}</h1>
+    {{- if .Params.toc }}
+    <aside id="toc">
+        {{ .TableOfContents }}
+    </aside>
+    {{- end }}
+    {{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `${1}<a href="#${2}" class="anchor"><i class="fas fa-link"></i></a>${3}` | safeHTML }}
+</main>
+{{ end }}
