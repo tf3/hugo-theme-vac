@@ -2,13 +2,16 @@
 <main class="post">
     <!-- TODO: don't show date if date is blank -->
     <span class="date">{{ .Date.Format .Site.Params.dateform }}</span>
-    <h1>{{ .Title | markdownify }}</h1>
+    <h1 class="title">{{ .Title | markdownify }}</h1>
+    <div class="post-tags">
+        {{ partial "tags" . }}
+    </div>
     {{- if .Params.toc }}
     <aside id="toc">
         <span>Contents</span>
         {{ .TableOfContents }}
     </aside>
     {{- end }}
-    {{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `${1}<a href="#${2}" class="anchor"><i class="fas fa-link"></i></a>${3}` | safeHTML }}
+    {{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `<a href="#${2}" class="anchor">${1}</a>${3}` | safeHTML }}
 </main>
 {{ end }}
