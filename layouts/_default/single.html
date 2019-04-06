@@ -1,8 +1,11 @@
 {{ define "main" }}
 <main class="post">
+    <!-- TODO: don't show date if date is blank -->
+    <span class="date">{{ .Date.Format .Site.Params.dateform }}</span>
     <h1>{{ .Title | markdownify }}</h1>
     {{- if .Params.toc }}
     <aside id="toc">
+        <span>Contents</span>
         {{ .TableOfContents }}
     </aside>
     {{- end }}
