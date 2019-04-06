@@ -21,11 +21,9 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top: 0;
-    padding-top: 0;
+    margin: 0;
+    padding: 0;
 }
-
-
 
 /* header.html */
 
@@ -43,6 +41,11 @@ header a {
 }
 
 /* list.html */
+
+.list h1 {
+    margin-bottom: 1em;
+}
+
 .posts-group {
     display: flex;
     margin-bottom: 2em;
@@ -75,7 +78,7 @@ header a {
 .tag-list,
 .list-date {
     font-size: 0.85em;
-    opacity: 0.7;
+    opacity: 0.6;
     margin-left: 0;
     padding-left: 0;
     display: inline;
@@ -102,16 +105,16 @@ header a {
 
 /* single.html */
 
+.post h1.title {
+    margin-bottom: 0;
+}
+
 .date {
     color: #333333;
 }
 
-#post a {
-    text-decoration: underline;
-}
-
-.anchor {
-    float: left;
+.post-tags {
+    margin-bottom: 1em;
 }
 
 #toc {
@@ -124,7 +127,6 @@ header a {
 
 #toc span {
     font-weight: bold;
-    /* color: #111111; */
 }
 
 #toc a {
@@ -142,6 +144,21 @@ header a {
     margin-left: 0;
     padding-left: 0;
 
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    text-decoration: none;
+}
+
+blockquote {
+    opacity: 0.8;
+    border-left: 0.2em solid #333;
+    padding-left: 1.5em;
 }
 
 
