@@ -8,10 +8,13 @@
         <ul class="posts-list">
             {{- range .Pages }}
             <li class="post-item">
-                <a href="{{.Permalink}}">
-                    <span class="post-title">{{.Title | markdownify}}</span>
-                </a>
-                <!-- TODO: include tags here -->
+                <div class="post-title">
+                    <a href="{{.Permalink}}">
+                        <span>{{.Title | markdownify}}</span>
+                    </a>
+                </div>
+                <span class="list-date">{{ .Date.Format .Site.Params.dateformShort }}</span>
+                {{ partial "tags" . }}
             </li>
             {{- end }}
         </ul>
