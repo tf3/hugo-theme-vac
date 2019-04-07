@@ -1,7 +1,8 @@
 {{ define "main" }}
 <main class="post">
-    <!-- TODO: don't show date if date is blank -->
+    {{- if isset .Params "date" }}
     <span class="date">{{ .Date.Format .Site.Params.dateform }}</span>
+    {{- end }}
     <h1 class="title">{{ .Title | markdownify }}</h1>
     <div class="post-tags">
         {{ partial "tags" . }}
