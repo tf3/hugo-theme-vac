@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="list">
-    <h1>{{ .Title }}</h1>
+    <h1>{{- if eq .Section "tags" }}Tagged:&nbsp;{{- end}}{{ .Title }}</h1>
     {{- range .Data.Pages.GroupByDate "2006" }}
     {{ if ne .Key "0001" }}
     <div class="posts-group">
