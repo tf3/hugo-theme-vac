@@ -1,5 +1,6 @@
 <head>
     <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ $normalize := resources.Get "style/normalize.css" }}
     {{ $main := resources.Get "style/main.css"  }}
     {{ $bundle := slice $normalize $main | resources.Concat "css/bundle.css" |  minify | fingerprint }}

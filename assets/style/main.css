@@ -9,6 +9,7 @@ main {
     background: #fff;
     max-width: 38em;
     padding: 4em;
+    box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 a {
@@ -29,15 +30,22 @@ h6 {
 
 header {
     text-align: center;
-    background: rgb(28, 89, 168);
+    background: #c3854a;
+    /* for blue: #3282ea; */
     border-radius: 0 0 40% 40%;
-    padding: 0.7em;
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 
 header a {
     color: #fff;
     text-decoration: none;
+    display: block;
+    padding: 0.7em;
+    border-radius: 0 0 40% 40%;
+}
+
+header a:hover {
+    text-decoration: underline;
 }
 
 /* list.html */
@@ -85,23 +93,40 @@ header a {
 }
 
 .list-date {
-    margin-right: 1em;
+    margin-right: 0.5em;
 }
+
+/* tags.html */
 
 .tag-list a {
     text-decoration: none;
-    background: #dbeaff;
+    background: #ebdac9;
+    /* for blue: #dbeaff; */
 }
 
 .tag-list li {
     display: inline;
     white-space: nowrap;
+    margin-left: 0.2em;
 }
 
 .tag-list li::before {
     content: '#';
+    background: #ebdac9;
+    /* for blue: #dbeaff; */
 }
 
+/* terms.html */
+
+.all-tags {
+    font-size: 1em;
+}
+
+.all-tags li {
+    display: block;
+    margin-left: 0;
+    margin-bottom: 0.2em
+}
 
 /* single.html */
 
@@ -162,7 +187,7 @@ blockquote {
 }
 
 
-/* footer.html */
+/* footer.html ❧ */
 footer {
     text-align: center;
 }
@@ -175,4 +200,49 @@ footer li {
 footer a {
     text-decoration: none;
     color: #666;
+}
+
+footer nav ul {
+    padding-left: 0;
+}
+
+/* media queries */
+
+
+@media (max-width: 56em) {
+    html {
+        background: #fff;
+        font-size: 12pt;
+    }
+
+    main {
+        padding: 1em;
+        box-shadow: none;
+    }
+
+    footer::before {
+        border: none;
+        border-top: 2px solid rgba(0, 0, 0, 0.205);
+        display: block;
+        max-width: 20em;
+        margin: 0 auto;
+        content: "";
+    }
+
+    .posts-group {
+        display: block;
+    }
+
+    .post-year {
+        margin-bottom: 0.5em;
+    }
+
+    blockquote {
+        margin-left: 0.5em;
+    }
+
+    #TableOfContents ul {
+        padding-left: 1em;
+    }
+
 }
