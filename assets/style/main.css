@@ -112,7 +112,6 @@ header a:hover {
 
 .tag-list li:first-child {
     margin-left: 0;
-    background: #000 !important;
 }
 
 .tag-list li::before {
@@ -191,6 +190,9 @@ blockquote {
     padding-left: 1.5em;
 }
 
+li:target {
+    background: #ebdac9;
+}
 
 /* footer.html ❧ */
 footer {
