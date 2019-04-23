@@ -93,7 +93,7 @@ header a:hover {
 }
 
 .list-date {
-    margin-right: 0.5em;
+    margin-right: 1em;
 }
 
 /* tags.html */
@@ -107,7 +107,12 @@ header a:hover {
 .tag-list li {
     display: inline;
     white-space: nowrap;
-    margin-left: 0.2em;
+    margin-left: 0.5em;
+}
+
+.tag-list li:first-child {
+    margin-left: 0;
+    background: #000 !important;
 }
 
 .tag-list li::before {
@@ -194,7 +199,11 @@ footer {
 
 footer li {
     display: inline;
-    margin-left: 0.5em;
+    margin-left: 0.7em;
+}
+
+footer li:first-child {
+    margin-left: 0;
 }
 
 footer a {
