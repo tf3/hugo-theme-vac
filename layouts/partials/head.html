@@ -1,7 +1,7 @@
 <head>
     {{ if eq .Title "Posts"}}
     <title>{{ .Site.Title }}</title>
-    {{  else }}
+    {{ else }}
     <title>{{ .Title }} - {{ .Site.Title }}</title>
     {{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
