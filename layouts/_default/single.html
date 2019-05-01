@@ -14,5 +14,13 @@
     </aside>
     {{- end }}
     {{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `<a href="#${2}" class="anchor">${1}</a>${3}` | safeHTML }}
+    <div class="other-posts">
+        {{- with .NextInSection }}
+        <a class="next" href="{{ .Permalink }}"><span>← Newer post</span> {{ .Title }}</a>
+        {{- end }}
+        {{- with .PrevInSection }}
+        <a class="previous" href="{{ .Permalink }}"><span>Older post →</span> {{ .Title }}</a>
+        {{- end }}
+    </div>
 </main>
 {{ end }}

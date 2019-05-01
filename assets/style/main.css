@@ -175,6 +175,42 @@ header a:hover {
 
 }
 
+.other-posts {
+    margin-top: 2em;
+    /* margin-bottom: 1em; */
+    overflow: auto;
+    /* background: #eee; */
+}
+
+.previous,
+.next {
+    display: block;
+    max-width: 45%;
+    padding: 1em;
+    background: #ebdac9;
+    border-radius: 0.5em;
+}
+
+.other-posts .next {
+    float: left;
+    text-align: left;
+}
+
+.other-posts .previous {
+    float: right;
+    text-align: right;
+}
+
+.other-posts span {
+    display: block;
+    color: #666;
+}
+
+
+.other-posts a {
+    text-decoration: none !important;
+}
+
 h1 a,
 h2 a,
 h3 a,
@@ -219,7 +255,6 @@ footer nav ul {
 
 /* media queries */
 
-
 @media (max-width: 56em) {
     html {
         background: #fff;
@@ -254,6 +289,17 @@ footer nav ul {
 
     #TableOfContents ul {
         padding-left: 1em;
+    }
+
+    .previous,
+    .next {
+        max-width: 100%;
+        margin-top: 0.5em;
+    }
+
+    .other-posts .next,
+    .other-posts .previous {
+        float: none;
     }
 
 }
