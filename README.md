@@ -1,6 +1,6 @@
 # Hugo Theme Vac
 
-Lightweight [Hugo](https://gohugo.io) blog theme.
+Lightweight [Hugo](https://gohugo.io) blog theme. Demo at [vaccha.com](https://vaccha.com).
 
 ## Features
 
