@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <span class="list-date">{{ .Date.Format .Site.Params.dateformShort }}</span>
-                {{ partial "tags" . }}
+                {{- partial "tags" . -}}
             </li>
             {{- end }}
         </ul>
