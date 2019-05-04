@@ -147,11 +147,12 @@ header a:hover {
 }
 
 #toc {
-    background: #eee;
-    border-radius: 1em;
+    /* background: #eee; */
+    /* border-radius: 1em; */
     font-size: 0.85em;
-    padding: 1em;
-    opacity: 0.9
+    /* padding: 1em; */
+    opacity: 0.9;
+    border-bottom: 1px solid;
 }
 
 #toc span {
@@ -226,8 +227,14 @@ blockquote {
     padding-left: 1.5em;
 }
 
-li:target {
-    background: #ebdac9;
+.footnotes li {
+    padding: 0.3em;
+    border: 1px solid #fff;
+}
+
+.footnotes li:target {
+    background: #e8e73580;
+    border: 1px solid #000;
 }
 
 /* footer.html ❧ */
