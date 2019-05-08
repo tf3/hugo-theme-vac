@@ -70,7 +70,6 @@ header span a {
 
 .posts-group {
   display: flex;
-  margin-bottom: 2em;
 }
 
 .posts-list {
@@ -93,8 +92,8 @@ header span a {
 
 .post-year {
   margin-right: 2em;
-  /* color: #666; */
-  font-size: 1.5em;
+  color: #222;
+  font-size: 1.6em;
 }
 
 .tag-list,
@@ -205,13 +204,13 @@ header span a {
   margin-top: 2em;
   /* margin-bottom: 1em; */
   overflow: auto;
-  /* background: #eee; */
+  background: #eee;
 }
 
 .previous,
 .next {
   display: block;
-  max-width: 45%;
+  max-width: 44%;
   padding: 1em;
   background: #ebdac9;
   border-radius: 0.5em;
@@ -284,11 +283,20 @@ hr::after {
 /* footer.html ❧ */
 footer {
   text-align: center;
+  /* padding: 1em; */
+  /* padding-top: 0; */
+  font-size: 1.1em;
+  background: #eee;
 }
 
 footer li {
   display: inline;
   margin-left: 0.7em;
+}
+
+footer ul {
+  margin: 0;
+  padding: 2em;
 }
 
 footer li:first-child {

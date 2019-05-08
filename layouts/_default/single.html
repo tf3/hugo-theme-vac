@@ -18,7 +18,10 @@
 </div>
 <main class="post container">
     {{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `<a href="#${2}" class="anchor">${1}</a>${3}` | safeHTML }}
-    <div class="other-posts">
+</main>
+{{ if or (.NextInSection) (.PrevInSection) }}
+<div class="other-posts">
+    <div class="container">
         {{- with .NextInSection }}
         <a class="next" href="{{ .Permalink }}"><span>← Newer post</span> {{ .Title | markdownify }}</a>
         {{- end }}
@@ -26,5 +29,6 @@
         <a class="previous" href="{{ .Permalink }}"><span>Older post →</span> {{ .Title | markdownify }}</a>
         {{- end }}
     </div>
-</main>
+</div>
+{{ end }}
 {{ end }}
