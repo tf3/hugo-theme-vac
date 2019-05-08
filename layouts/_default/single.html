@@ -1,18 +1,22 @@
 {{ define "main" }}
-<main class="post">
-    {{- if isset .Params "date" }}
-    <span class="date">{{ .Date.Format .Site.Params.dateform }}</span>
-    {{- end }}
-    <h1 class="title">{{ .Title | markdownify }}</h1>
-    <div class="post-tags">
-        {{ partial "tags" . }}
+<div class="post-header">
+    <div class="container">
+        {{- if isset .Params "date" }}
+        <span class="date">{{ .Date.Format .Site.Params.dateform }}</span>
+        {{- end }}
+        <h1 class="title">{{ .Title | markdownify }}</h1>
+        <div class="post-tags">
+            {{ partial "tags" . }}
+        </div>
+        {{- if .Params.toc }}
+        <aside id="toc">
+            <span>Contents</span>
+            {{ .TableOfContents }}
+        </aside>
+        {{- end }}
     </div>
-    {{- if .Params.toc }}
-    <aside id="toc">
-        <span>Contents</span>
-        {{ .TableOfContents }}
-    </aside>
-    {{- end }}
+</div>
+<main class="post container">
     {{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `<a href="#${2}" class="anchor">${1}</a>${3}` | safeHTML }}
     <div class="other-posts">
         {{- with .NextInSection }}
