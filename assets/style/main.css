@@ -81,7 +81,7 @@ header span a {
 }
 
 .post-item {
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.205); */
 }
 
@@ -124,6 +124,12 @@ header span a {
   text-decoration: none;
   background: #ebdac9;
   /* for blue: #dbeaff; */
+  padding: 0.2em;
+  background: #9c6129;
+  background: #f3e7dc;
+  color: #000;
+  border-radius: 0.2em;
+  border: 1px solid #666;
 }
 
 .tag-list li {
@@ -134,12 +140,6 @@ header span a {
 
 .tag-list li:first-child {
   margin-left: 0;
-}
-
-.tag-list li::before {
-  content: "#";
-  background: #ebdac9;
-  /* for blue: #dbeaff; */
 }
 
 /* terms.html */
@@ -165,7 +165,7 @@ header span a {
 }
 
 .post-tags {
-  /* margin-bottom: 1em; */
+  margin-top: 0.5em;
 }
 
 #toc {
@@ -308,6 +308,7 @@ footer nav ul {
 
   .posts-group {
     display: block;
+    margin-bottom: 0 !important;
   }
 
   .post-year {
