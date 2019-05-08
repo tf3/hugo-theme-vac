@@ -251,6 +251,26 @@ blockquote {
   padding-left: 1.5em;
 }
 
+hr {
+  border: none;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+hr::after {
+  content: "❧";
+  font-size: 2em;
+}
+
+.footnotes hr::after {
+  content: none;
+}
+
+.footnotes hr {
+  border: none 1px solid #000;
+  margin: 0;
+}
+
 .footnotes li {
   padding: 0.3em;
   border: 1px solid #fff;
