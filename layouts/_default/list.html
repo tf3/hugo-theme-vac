@@ -1,27 +1,29 @@
 {{ define "main" }}
-<main class="list container">
-    {{- if ne .Section "" }}
-    <h1>{{- if eq .Section "tags" }}Tagged:&nbsp;{{- end}}{{ .Title }}</h1>
-    {{- end -}}
-    {{- range .Data.Pages.GroupByDate "2006" }}
-    {{ if ne .Key "0001" }}
-    <div class="posts-group">
-        <div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
-        <ul class="posts-list">
-            {{- range .Pages }}
-            <li class="post-item">
-                <div class="post-title">
-                    <a href="{{.Permalink}}">
-                        <span>{{.Title | markdownify}}</span>
-                    </a>
-                </div>
-                <span class="list-date">{{ .Date.Format .Site.Params.dateformShort }}</span>
-                {{- partial "tags" . -}}
-            </li>
-            {{- end }}
-        </ul>
+<main class="list">
+    <div class="container">
+        {{- if ne .Section "" }}
+        <h1>{{- if eq .Section "tags" }}Tagged:&nbsp;{{- end}}{{ .Title }}</h1>
+        {{- end -}}
+        {{- range .Data.Pages.GroupByDate "2006" }}
+        {{ if ne .Key "0001" }}
+        <div class="posts-group">
+            <div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
+            <ul class="posts-list">
+                {{- range .Pages }}
+                <li class="post-item">
+                    <div class="post-title">
+                        <a href="{{.Permalink}}">
+                            <span>{{.Title | markdownify}}</span>
+                        </a>
+                    </div>
+                    <span class="list-date">{{ .Date.Format .Site.Params.dateformShort }}</span>
+                    {{- partial "tags" . -}}
+                </li>
+                {{- end }}
+            </ul>
+        </div>
+        {{- end  }}
+        {{- end }}
     </div>
-    {{- end  }}
-    {{- end }}
 </main>
 {{ end }}

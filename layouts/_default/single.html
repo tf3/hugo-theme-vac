@@ -16,8 +16,10 @@
         {{- end }}
     </div>
 </div>
-<main class="post container">
-    {{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `<a href="#${2}" class="anchor">${1}</a>${3}` | safeHTML }}
+<main class="post">
+    <div class="container">
+        {{ .Content | replaceRE "(<h[1-6] id=\"([^\"]+)\".+)(</h[1-6]+>)" `<a href="#${2}" class="anchor">${1}</a>${3}` | safeHTML }}
+    </div>
 </main>
 {{ if or (.NextInSection) (.PrevInSection) }}
 <div class="other-posts">
