@@ -1,9 +1,18 @@
 {{ define "main" }}
+{{- if ne .Section "" }}
+<div class="post-header">
+    <div class="container">
+        {{- if eq .Section "tags" }}
+        <h1><a href="/tags/">Tags</a> / <span class="header-tag">{{ urlize .Title }}</span></h1>
+        {{ else }}
+        <h1>{{ .Title }}</h1>
+        {{- end }}
+        <!-- <h1>{{- if eq .Section "tags" }}Tagged:&nbsp;{{- end}}{{ .Title }}</h1> -->
+    </div>
+</div>
+{{- end -}}
 <main class="list">
     <div class="container">
-        {{- if ne .Section "" }}
-        <h1>{{- if eq .Section "tags" }}Tagged:&nbsp;{{- end}}{{ .Title }}</h1>
-        {{- end -}}
         {{- range .Data.Pages.GroupByDate "2006" }}
         {{ if ne .Key "0001" }}
         <div class="posts-group">
