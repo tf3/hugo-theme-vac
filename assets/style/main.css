@@ -41,7 +41,7 @@ header span {
 header a {
   color: #fff;
   text-decoration: none;
-  display: block;
+  /* display: block; */
   /* padding: 1em; */
   /* border-radius: 0 0 40% 40%; */
   font-weight: normal;
@@ -139,6 +139,7 @@ main p:first-child {
 .header-tag {
   opacity: 0.7;
   font-weight: normal;
+  font-size: 0.85em;
 }
 
 .tag-list li {
@@ -215,6 +216,7 @@ main p:first-child {
   /* margin-bottom: 1em; */
   overflow: auto;
   /* background: #eee; */
+  opacity: 0.8;
 }
 
 .other-posts::after {
@@ -233,12 +235,18 @@ main p:first-child {
   padding: 1em;
   /* background: #ebdac9; */
   border-radius: 0.5em;
+  border: 1px solid transparent;
 }
 
-.previous:hover a,
-.next:hover a {
+.previous:hover,
+.next:hover {
   /* background: #fff; */
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  /* color: #c3854a; */
+  /* margin-left: -1em; */
+  background: #f3e7dc;
+  border: 1px solid #666;
+
 }
 
 .other-posts .next {
@@ -257,7 +265,7 @@ main p:first-child {
 }
 
 .other-posts a {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 h1 a,
@@ -297,12 +305,13 @@ hr::after {
 
 .footnotes li {
   padding: 0.3em;
-  border: 1px solid #fff;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
 }
 
 .footnotes li:target {
-  background: #e8e73580;
-  border: 1px solid #000;
+  background: #ffff0078;
+  border: 1px solid #555;
 }
 
 /* footer.html ❧ */
