@@ -1,25 +1,37 @@
 {{ define "main" }}
-<main class="list">
-    <h1>{{- if eq .Section "tags" }}Tagged:&nbsp;{{- end}}{{ .Title }}</h1>
-    {{- range .Data.Pages.GroupByDate "2006" }}
-    {{ if ne .Key "0001" }}
-    <div class="posts-group">
-        <div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
-        <ul class="posts-list">
-            {{- range .Pages }}
-            <li class="post-item">
-                <div class="post-title">
-                    <a href="{{.Permalink}}">
-                        <span>{{.Title | markdownify}}</span>
-                    </a>
-                </div>
-                <span class="list-date">{{ .Date.Format .Site.Params.dateformShort }}</span>
-                {{- partial "tags" . -}}
-            </li>
-            {{- end }}
-        </ul>
+{{- if ne .Section "" }}
+<div class="post-header">
+    <div class="container">
+        {{- if eq .Section "tags" }}
+        <h1><a href="/tags/">Tags</a> / <span class="header-tag">{{ urlize .Title }}</span></h1>
+        {{ else }}
+        <h1>{{ .Title }}</h1>
+        {{- end }}
     </div>
-    {{- end  }}
-    {{- end }}
+</div>
+{{- end -}}
+<main class="list">
+    <div class="container">
+        {{- range .Data.Pages.GroupByDate "2006" }}
+        {{ if ne .Key "0001" }}
+        <div class="posts-group">
+            <div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
+            <ul class="posts-list">
+                {{- range .Pages }}
+                <li class="post-item">
+                    <div class="post-title">
+                        <a href="{{.Permalink}}">
+                            <span>{{.Title | markdownify}}</span>
+                        </a>
+                    </div>
+                    <span class="list-date">{{ .Date.Format .Site.Params.dateformShort }}</span>
+                    {{- partial "tags" . -}}
+                </li>
+                {{- end }}
+            </ul>
+        </div>
+        {{- end  }}
+        {{- end }}
+    </div>
 </main>
 {{ end }}
