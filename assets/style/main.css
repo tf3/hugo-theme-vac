@@ -204,17 +204,9 @@ main p:first-child {
 
 .previous,
 .next {
-  border: 1px solid transparent;
-  border-radius: 0.5em;
   display: block;
   max-width: 44%;
   padding: 1em;
-}
-
-.previous:hover,
-.next:hover {
-  background: #f3e7dc;
-  border: 1px solid #666;
 }
 
 .other-posts .next {
@@ -271,15 +263,19 @@ hr::after {
   margin: 0;
 }
 
+.footnotes ol {
+  list-style-position: inside;
+  padding-inline-start: 0;
+}
+
 .footnotes li {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   border-radius: 0.2em;
   padding: 0.3em;
 }
 
 .footnotes li:target {
   background: #ffff0078;
-  border: 1px solid #555;
 }
 
 /* footer.html ❧ */
