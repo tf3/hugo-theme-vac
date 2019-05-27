@@ -6,8 +6,9 @@
     {{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ $normalize := resources.Get "style/normalize.css" }}
+    {{ $syntax := resources.Get "style/syntax.css"  }}
     {{ $main := resources.Get "style/main.css"  }}
-    {{ $bundle := slice $normalize $main | resources.Concat "css/bundle.css" |  minify | fingerprint }}
+    {{ $bundle := slice $normalize $syntax $main | resources.Concat "css/bundle.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $bundle.Permalink }}" integrity="{{ $bundle.Data.Integrity }}">
     {{ with .OutputFormats.Get "rss" -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
