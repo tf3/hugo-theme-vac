@@ -40,10 +40,6 @@ header a {
   text-decoration: none;
 }
 
-header a:hover {
-  text-decoration: underline;
-}
-
 header span a {
   display: inline;
 }
@@ -175,13 +171,28 @@ main p:first-child {
 
 #TableOfContents>ul {
   margin-left: 0;
-  padding-left: 0.5em;
+  padding-left: 0;
 }
 
 #TableOfContents>ul>li {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
+}
+
+#TableOfContents>ul>li>ul {
+  margin-left: 1.5em;
+  padding-left: 0;
+}
+
+#TableOfContents>ul>li ul {
+  counter-reset: section;
+  list-style-type: none;
+}
+
+#TableOfContents>ul>li li::before {
+  counter-increment: section;
+  content: counters(section, ".") " ";
 }
 
 #TableOfContents ul {
@@ -237,6 +248,25 @@ h6 a {
   text-decoration: none;
 }
 
+.container {
+  counter-reset: h2count h3count h4count;
+}
+
+h2::before {
+counter-increment: h2count;
+content: counter(h2count) " ";
+}
+
+h3::before {
+  counter-increment: h3count;
+  content: counter(h2count) "." counter(h3count) " ";
+}
+
+h4::before {
+  counter-increment: h4count;
+  content: counter(h2count) "." counter(h3count) "." counter(h4count) " ";
+}
+
 blockquote {
   border-left: 0.2em solid #333;
   opacity: 0.8;
@@ -269,7 +299,6 @@ hr::after {
 }
 
 .footnotes li {
-  /* border: 1px solid transparent; */
   border-radius: 0.2em;
   padding: 0.3em;
 }
@@ -308,15 +337,31 @@ footer nav ul {
   padding-left: 0;
 }
 
+/* syntax, code, etc. */
+
+code {
+  background: #eff3f3;
+}
+
+.highlight pre {
+  padding: 1em;
+}
+
+kbd {
+  background: #eee;
+  padding: 0.1em;
+}
+
+pre {
+  background: #eff3f3;
+  padding: 1em;
+  overflow: auto;
+}
+
 /* media queries */
 @media (max-width: 56em) {
   html {
     font-size: 12pt;
-  }
-
-  main {
-    box-shadow: none;
-    padding: 1em;
   }
 
   .posts-group {
