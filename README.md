@@ -29,7 +29,6 @@ $ git submodule add https://github.com/tf3/hugo-theme-vac.git themes/vac
 
 - Add screenshots
 - Add example site configuration
-- Add syntax highlighting for code in posts
 
 ## Acknowledgements
 
