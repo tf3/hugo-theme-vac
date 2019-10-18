@@ -248,24 +248,21 @@ h6 a {
   text-decoration: none;
 }
 
-.container {
-  counter-reset: h2count h3count h4count;
-}
+/* To automatically number headings and sub-headings */
+/* Code from https://philarcher.org/diary/2013/headingnumbers/ */
+body {counter-reset: h2}
+h2 {counter-reset: h3}
+h3 {counter-reset: h4}
+h4 {counter-reset: h5}
+h5 {counter-reset: h6}
 
-h2::before {
-counter-increment: h2count;
-content: counter(h2count) " ";
-}
+h2:before {counter-increment: h2; content: counter(h2) " "}
+h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) " "}
+h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) " "}
+h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " "}
+h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " "}
 
-h3::before {
-  counter-increment: h3count;
-  content: counter(h2count) "." counter(h3count) " ";
-}
-
-h4::before {
-  counter-increment: h4count;
-  content: counter(h2count) "." counter(h3count) "." counter(h4count) " ";
-}
+h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.nocount:before { content: ""; counter-increment: none }
 
 blockquote {
   border-left: 0.2em solid #333;
