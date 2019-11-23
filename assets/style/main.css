@@ -285,6 +285,11 @@ hr::after {
   font-size: 2em;
 }
 
+.footnotes {
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
 .footnotes hr::after {
   content: none;
 }
