@@ -4,9 +4,9 @@
         {{- if isset .Params "date" }}
         <span class="date">{{ .Date.Format .Site.Params.dateform }}</span>
         {{- end }}
-        {{ if ne .Lastmod .Date }}
+        <!-- {{ if ne .Lastmod .Date }}
         <span class="updated">Updated {{ .Lastmod.Format .Site.Params.dateform }}</span>
-        {{- end }}
+        {{- end }} -->
         <h1 class="title">{{ .Title | markdownify }}</h1>
         <div class="post-tags">
             {{ partial "tags" . }}
