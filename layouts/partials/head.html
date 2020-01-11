@@ -1,8 +1,8 @@
 <head>
-    {{ if eq .Title "Posts"}}
-    <title>{{ .Site.Title }}</title>
+    {{ if eq .Title .Site.Title}}
+        <title>{{ .Site.Title }}</title>
     {{ else }}
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
+        <title>{{ .Title }} - {{ .Site.Title }}</title>
     {{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ $normalize := resources.Get "style/normalize.css" }}
