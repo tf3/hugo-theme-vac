@@ -154,7 +154,6 @@ main p:first-child {
 .updated {
   color: #333333;
   font-size: 0.7em;
-  display: block;
 }
 
 .post-tags {
@@ -175,30 +174,24 @@ main p:first-child {
   text-decoration: none;
 }
 
+#TableOfContents ul {
+  counter-reset: section;
+  list-style-type: none;
+}
+
 #TableOfContents>ul {
-  margin-left: 0;
+  margin-left: 1.5em;
   padding-left: 0;
 }
 
-#TableOfContents>ul>li {
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 0;
+#TableOfContents li::before {
+   counter-increment: section;
+   content: counters(section, ".") " ";
 }
 
 #TableOfContents>ul>li>ul {
   margin-left: 1.5em;
   padding-left: 0;
-}
-
-#TableOfContents>ul>li ul {
-  counter-reset: section;
-  list-style-type: none;
-}
-
-#TableOfContents>ul>li li::before {
-  counter-increment: section;
-  content: counters(section, ".") " ";
 }
 
 #TableOfContents ul {
@@ -317,6 +310,10 @@ hr::after {
 
 .footnotes li:target {
   background: #ffff0078;
+}
+
+.footnotes p {
+  display: inline;
 }
 
 /* footer.html ❧ */
