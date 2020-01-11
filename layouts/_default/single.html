@@ -4,9 +4,9 @@
         {{- if isset .Params "date" }}
         <span class="date">{{ .Date.Format .Site.Params.dateform }}</span>
         {{- end }}
-        <!-- {{ if ne .Lastmod .Date }}
-        <span class="updated">Updated {{ .Lastmod.Format .Site.Params.dateform }}</span>
-        {{- end }} -->
+        {{ if ne .Lastmod .Date }}
+        <div class="updated">Updated {{ .Lastmod.Format .Site.Params.dateform }}</div>
+        {{- end }}
         <h1 class="title">{{ .Title | markdownify }}</h1>
         <div class="post-tags">
             {{ partial "tags" . }}
@@ -25,15 +25,21 @@
     </div>
 </main>
 {{ if or (.NextInSection) (.PrevInSection) }}
-<div class="other-posts">
-    <div class="container">
-        {{- with .NextInSection }}
-        <a class="next" href="{{ .Permalink }}"><span>← Newer post</span> {{ .Title | markdownify }}</a>
-        {{- end }}
-        {{- with .PrevInSection }}
-        <a class="previous" href="{{ .Permalink }}"><span>Older post →</span> {{ .Title | markdownify }}</a>
-        {{- end }}
+    {{ if not .Params.hidePrevAndNext}}
+    <div class="other-posts">
+        <div class="container">
+            {{- with .NextInSection }}
+                {{ if isset .Params "date" }}
+                    <a class="next" href="{{ .Permalink }}"><span>← Newer post</span> {{ .Title | markdownify }}</a>
+                {{- end }}
+            {{- end }}
+            {{- with .PrevInSection }}
+                {{ if isset .Params "date" }}
+                    <a class="previous" href="{{ .Permalink }}"><span>Older post →</span> {{ .Title | markdownify }}</a>
+                    {{- end }}
+                {{- end }}
+        </div>
     </div>
-</div>
+    {{ end }}
 {{ end }}
 {{ end }}
