@@ -2,10 +2,10 @@
 <div class="post-header">
     <div class="container">
         {{- if isset .Params "date" }}
-        <span class="date">{{ .Date.Format .Site.Params.dateform }}</span>
+            <span class="date">{{ .Date.Format .Site.Params.dateform }}</span>
         {{- end }}
-        {{ if ne .Lastmod .Date }}
-        <div class="updated">Updated {{ .Lastmod.Format .Site.Params.dateform }}</div>
+        {{ if isset .Params "modified" }}
+            <div class="updated">Updated {{ dateFormat .Site.Params.dateform .Params.modified }}</div>
         {{- end }}
         <h1 class="title">{{ .Title | markdownify }}</h1>
         <div class="post-tags">
