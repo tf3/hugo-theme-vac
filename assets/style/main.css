@@ -284,6 +284,12 @@ hr::after {
   font-size: 2em;
 }
 
+h1 a.footnote-ref, h2 a.footnote-ref, h3 a.footnote-ref, h4 a.footnote-ref {
+  vertical-align: super;
+  font-size: 0.75em;
+  text-decoration: underline;
+}
+
 .footnotes {
   font-size: 0.85em;
   opacity: 0.9;
