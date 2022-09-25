@@ -273,6 +273,10 @@ blockquote {
   padding-left: 1.5em;
 }
 
+.post ol li ol li {
+  list-style-type: lower-alpha;
+}
+
 hr {
   border: none;
   margin-bottom: 4em;
@@ -371,6 +375,10 @@ pre {
   background: #eff3f3;
   padding: 1em;
   overflow: auto;
+}
+
+img {
+  max-width: 100%
 }
 
 /* media queries */
