@@ -381,6 +381,20 @@ img {
   max-width: 100%
 }
 
+/* definitions */
+dl {
+  display: flex;
+  justify-content: flex-start;
+}
+dl dt {
+  font-weight: bold;
+}
+
+dl dd {
+  margin-left: 0.5em;
+
+}
+
 /* media queries */
 @media (max-width: 56em) {
   html {
