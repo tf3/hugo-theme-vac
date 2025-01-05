@@ -93,7 +93,7 @@ main p:first-child {
   font-size: 0.85em;
   margin-left: 0;
   opacity: 0.6;
-  padding-left: 0;
+  padding: 0.3em 0;
 }
 
 .list-date {
